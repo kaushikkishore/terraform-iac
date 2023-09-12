@@ -32,3 +32,7 @@ considering the amazon ec2 with linux2
 now run this -> `cat graph.dot | dot -Tsvg > graph.svg`
 
 now copy the content of the svg to your machine and look for the results.
+
+### Setting up terraform on your machine
+
+You can look into for steps here -> [Medium](https://medium.com/@kk12391/setup-aws-credentials-for-terraform-mac-m1-or-apple-silicon-b7dae25a3be2)
