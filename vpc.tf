@@ -7,24 +7,17 @@ resource "aws_vpc" "terraformvpc" {
   }
 }
 
-resource "aws_subnet" "terraform-subnet-1" {
-  vpc_id            = aws_vpc.terraformvpc.id
-  cidr_block        = "10.0.0.0/26"
-  availability_zone = "ap-south-1a" # Choose your desired availability zone
-  # Other subnet configuration...
+
+# Create multiple subnets within the VPC
+resource "aws_subnet" "terraform-subnet" {
+  count                   = 3 # Change this to the number of subnets you want
+  vpc_id                  = aws_vpc.terraformvpc.id
+  cidr_block              = element(["10.0.0.0/26", "10.0.0.64/26", "10.0.0.128/26"], count.index)
+  availability_zone       = element(["ap-south-1a", "ap-south-1b", "ap-south-1c"], count.index) # Adjust AZs as needed
+  map_public_ip_on_launch = true
+  tags = {
+    Name = "terraform-subnet-${count.index}"
+  }
 }
 
-resource "aws_subnet" "terraform-subnet-2" {
-  vpc_id            = aws_vpc.terraformvpc.id
-  cidr_block        = "10.0.0.64/26"
-  availability_zone = "ap-south-1b" # Choose another availability zone
-  # Other subnet configuration...
-}
-
-resource "aws_subnet" "terraform-subnet-3" {
-  vpc_id            = aws_vpc.terraformvpc.id
-  cidr_block        = "10.0.0.128/26"
-  availability_zone = "ap-south-1c" # Choose another availability zone
-  # Other subnet configuration...
-}
 
