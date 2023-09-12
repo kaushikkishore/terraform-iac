@@ -1,0 +1,27 @@
+# Ignore Terraform's .terraform directory
+.terraform/
+
+# Ignore Terraform's terraform.tfstate files
+*.tfstate
+*.tfstate.backup
+
+# Ignore any crash log files created by Terraform
+crash.log
+
+# Ignore .tfvars files that are intended to be kept secret
+*.tfvars
+
+# Ignore override files as they are usually used to override variables
+override.tf
+
+# Ignore CLI configuration files
+terraform.rc
+
+# Exclude any .terraform.lock.hcl files
+.terraform.lock.hcl
+
+# Ignore logs
+*.log
+
+# Exclude .terraform directories in modules
+**/.terraform/
