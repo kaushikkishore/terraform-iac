@@ -18,6 +18,9 @@
 | `cat /etc/os-release`                                    | To get your version of the `os`                                                |
 | `terraform plan -out=demopath`                           | This will save the current plan to the demopath. Later you can apply the path. |
 | `terraform apply demopath`                               | apply the saved configuration                                                  |
+| `terraform workspace new dev`                            | create a new dev workspace                                                     |
+| `terraform workspace list`                               | lists all workspcase with `*` on current workspace                             |
+| `terraform workspcae select dev`                         | select the workspace dev                                                       |
 
 To go agead with terraform graph. you need another dependency to render. as the graph will give you a dot file.
 
