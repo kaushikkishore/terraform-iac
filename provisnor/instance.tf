@@ -1,3 +1,6 @@
+locals {
+  ec2InstanceName = formatdate("YYYY-MMM-DD-hh-mm", timeadd(timestamp(), "4.5h"))
+}
 resource "aws_security_group" "terraform_security_group" {
   name_prefix = "terraform-security-group-"
   description = "My terraform Security Group"
@@ -33,7 +36,7 @@ resource "aws_instance" "myec2" {
   security_groups = [aws_security_group.terraform_security_group.name]
   instance_type   = "t2.micro"
   tags = {
-    "Name" = "terraform-ec2-instance"
+    "Name" = "tf-ec2-instance-${local.ec2InstanceName}"
   }
   key_name = "astuto-mac"
 
