@@ -11,3 +11,26 @@ There are standard module which is provided by the different cloud providers lik
 ### Workspcae
 
 You can create multiple workspace and then you can define a map to be used by the workspace. That will help you to get the better variables usage and then switch to workspace where you are.
+
+```
+variable "instance_type" {
+    type = "map"
+    default = {
+        default = "t2.micro"
+        dev = "t2.medium"
+        prod = "t2.large"
+    }
+}
+
+resource "aws_instance" "my_ec2" {
+    ami = "some-ami-id"
+    instance_type = lookup(var.instance_type, terraform.workspace)
+}
+
+```
+
+based on the workspace it will take the instance type. For each workspace a different `.tfstate` file will be generated. The defautl `.tfstate` file will be generated in root of the folder.
+
+other workspace state files will be inside
+
+`terraform.tfstate.d` -> `dev` or `prod`
