@@ -21,6 +21,15 @@
 | `terraform workspace new dev`                            | create a new dev workspace                                                     |
 | `terraform workspace list`                               | lists all workspcase with `*` on current workspace                             |
 | `terraform workspcae select dev`                         | select the workspace dev                                                       |
+| `terraform state list`                                   | To get the current resource list                                               |
+| `terraform state show`                                   | show attributes of a single resource like ec2                                  |
+| `terraform state mv`                                     | to move. In case you would like to rename the rosource.                        |
+| `terraform state pull`                                   | manually download the state file to inspect                                    |
+| `terraform state push`                                   | to push the state file.                                                        |
+| `terraform import`                                       | import existing resources                                                      |
+| `terraform state rm`                                     | remove the resource from the state file \*\*                                   |
+
+> \*\* In case when you would like to remove the instance/resource from the state file but not actually delete that. Next time terraform plan will recreate that resource.
 
 To go agead with terraform graph. you need another dependency to render. as the graph will give you a dot file.
 
