@@ -6,9 +6,9 @@ resource "aws_subnet" "terraform_public_subnet_01" {
   map_public_ip_on_launch = true # required for EKS 
 
   tags = {
-    "Name"                      = "TF Public Subnet 1 ap-south-1a"
-    "kubernetes.io/cluster/eks" = "shared" # the name of  cluster is important here. 
-    "kubernetes.io/role/elb"    = 1
+    "Name"                                        = "TF Public Subnet 1 ap-south-1a"
+    "kubernetes.io/cluster/terraform_eks_cluster" = "shared" # the name of  cluster is important here. 
+    "kubernetes.io/role/elb"                      = 1
   }
 }
 
@@ -20,9 +20,9 @@ resource "aws_subnet" "terraform_public_subnet_02" {
   map_public_ip_on_launch = true # required for EKS 
 
   tags = {
-    "Name"                            = "TF Public Subnet 2 ap-south-1b"
-    "kubernetes.io/cluster/eks"       = "shared"
-    "kubernetes.io/role/internal-elb" = 1
+    "Name"                                        = "TF Public Subnet 2 ap-south-1b"
+    "kubernetes.io/cluster/terraform_eks_cluster" = "shared"
+    "kubernetes.io/role/internal-elb"             = 1
   }
 }
 
@@ -33,9 +33,9 @@ resource "aws_subnet" "terraform_private_subnet_01" {
   availability_zone = "ap-south-1a"
 
   tags = {
-    "Name"                            = "TF Private Subnet ap-south-1a"
-    "kubernetes.io/cluster/eks"       = "shared"
-    "kubernetes.io/role/internal-elb" = 1
+    "Name"                                        = "TF Private Subnet ap-south-1a"
+    "kubernetes.io/cluster/terraform_eks_cluster" = "shared"
+    "kubernetes.io/role/internal-elb"             = 1
   }
 }
 
@@ -46,8 +46,8 @@ resource "aws_subnet" "terraform_private_subnet_02" {
   availability_zone = "ap-south-1b"
 
   tags = {
-    "Name"                      = "TF Private Subnet ap-south-1b"
-    "kubernetes.io/cluster/eks" = "shared"
-    "kubernetes.io/role/elb"    = 1
+    "Name"                                        = "TF Private Subnet ap-south-1b"
+    "kubernetes.io/cluster/terraform_eks_cluster" = "shared"
+    "kubernetes.io/role/elb"                      = 1
   }
 }
