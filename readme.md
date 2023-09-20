@@ -48,3 +48,18 @@ now copy the content of the svg to your machine and look for the results.
 ### Setting up terraform on your machine
 
 You can look into for steps here -> [Medium](https://medium.com/@kk12391/setup-aws-credentials-for-terraform-mac-m1-or-apple-silicon-b7dae25a3be2)
+
+## Running a linux container
+
+### Run Amazon CLI
+
+docker run -it --rm -v ${PWD}:/work -w /work --entrypoint /bin/sh amazon/aws-cli:2.0.17
+
+This will map your current directory in container. You can now install tools for your usage
+
+`yum install jq gzip nano tar git`
+
+To configure
+`aws configure`
+
+Let's say you want to run terraform now you can install terraform here. This is like a disposable container.
