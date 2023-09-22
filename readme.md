@@ -53,7 +53,7 @@ You can look into for steps here -> [Medium](https://medium.com/@kk12391/setup-a
 
 ### Run Amazon CLI
 
-docker run -it --rm -v ${PWD}:/work -w /work --entrypoint /bin/sh amazon/aws-cli:2.0.17
+`docker run -it --rm -v ${PWD}:/work -w /work --entrypoint /bin/sh amazon/aws-cli:2.0.17`
 
 This will map your current directory in container. You can now install tools for your usage
 

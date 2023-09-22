@@ -25,3 +25,6 @@ terraform.rc
 
 # Exclude .terraform directories in modules
 **/.terraform/
+
+# exclude node modules 
+**/node_modules
