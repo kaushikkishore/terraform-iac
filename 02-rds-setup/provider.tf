@@ -12,3 +12,8 @@ provider "aws" {
   # Configuration options
   region = "ap-south-1"
 }
+
+
+provider "vault" {
+  # Configuration options
+}
