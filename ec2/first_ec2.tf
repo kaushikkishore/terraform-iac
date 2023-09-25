@@ -10,7 +10,7 @@ resource "aws_instance" "myec2" {
     "Name" = "terraform-ec2-instance-${local.ec2InstanceName}"
   }
 
-  SSH connection
+  # SSH connection
   connection {
     type        = "ssh"
     user        = "ec2-user"                         # Replace with the appropriate user for your AMI
@@ -51,7 +51,7 @@ output "availability_zone" {
 output "public_dns" {
   value = aws_instance.myec2.public_dns
 }
-# output "ssh_command" {
-#   value = "ssh -i ~/Documents/astuto-mac.pem ec2-user@${aws_instance.myec2.public_dns}"
-# }
+output "ssh_command" {
+  value = "ssh -i ~/Documents/astuto-mac.pem ec2-user@${aws_instance.myec2.public_dns}"
+}
 
