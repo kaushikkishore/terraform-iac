@@ -58,3 +58,12 @@ To calculate the number of host addresses, raise 2 to the power of the number of
 Number of host addresses = 2^8 = 256
 
 So, under the CIDR block 10.0.0.0/24, there are 256 available IP addresses (from 10.0.0.0 to 10.0.0.255). However, the first and last IP addresses in the block (10.0.0.0 and 10.0.0.255) are typically reserved for network identification and broadcast, respectively, leaving 254 usable IP addresses for devices or resources in this subnet.
+
+```
+kubectl config get-contexts
+
+kubectl config use-context minikube
+
+kubectl config current-context
+
+```

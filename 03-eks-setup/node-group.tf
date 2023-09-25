@@ -11,7 +11,7 @@ resource "aws_eks_node_group" "terraform_node_group" {
   capacity_type  = "ON_DEMAND"
   ami_type       = "AL2_x86_64"
   disk_size      = 20
-  instance_types = ["t3.small"]
+  instance_types = ["t3.medium"]
 
   scaling_config {
     min_size     = 1
