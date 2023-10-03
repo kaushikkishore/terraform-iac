@@ -62,3 +62,7 @@ To grant access to an Amazon EKS (Elastic Kubernetes Service) cluster for anothe
    Finally, share the ARN of the AWS IAM role you created (e.g., `arn:aws:iam::123456789012:role/eks-access-role`) with the person you want to grant access to. They can assume this role using AWS CLI, AWS SDK, or other AWS services to interact with the EKS cluster.
 
 Remember to restrict permissions appropriately by fine-tuning the IAM policies and Kubernetes RBAC rules to ensure the person only has the necessary access for their tasks. Also, ensure secure handling of AWS credentials and IAM roles.
+
+## Another documentation
+
+[How to Add IAM User and IAM Role to AWS EKS Cluster](https://antonputra.com/kubernetes/add-iam-user-and-iam-role-to-eks/)

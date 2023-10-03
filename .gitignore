@@ -23,6 +23,8 @@ terraform.rc
 # Ignore logs
 *.log
 
+*.cq
+
 # Exclude .terraform directories in modules
 **/.terraform/
 
