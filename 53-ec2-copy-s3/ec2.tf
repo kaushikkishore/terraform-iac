@@ -18,23 +18,14 @@ resource "aws_instance" "myec2" {
     host        = aws_instance.myec2.public_ip
   }
 
-  provisioner "file" {
-    source      = "setup_helm.sh"                # Replace with the path to your local file
-    destination = "/home/ec2-user/setup_helm.sh" # Specify the destination path on the EC2 instance
-  }
-  provisioner "file" {
-    source      = "setup_kubectl.sh"                # Replace with the path to your local file
-    destination = "/home/ec2-user/setup_kubectl.sh" # Specify the destination path on the EC2 instance
-  }
-
   # Remote-exec provisioner to run commands on the EC2 instance
   provisioner "remote-exec" {
     inline = [
-      "chmod +x /home/ec2-user/setup_helm.sh",
-      "chmod +x /home/ec2-user/setup_kubectl.sh",
-      "sudo /home/ec2-user/setup_kubectl.sh",
-      "sudo /home/ec2-user/setup_helm.sh",
-      "echo 'Configured kubectl and helm'",
+      "sudo yum update -y",
+      "sudo yum install python3 -y",
+      "sudo yum install python3-pip -y",
+      "pip3 install virtualenv",
+
     ]
   }
 }
